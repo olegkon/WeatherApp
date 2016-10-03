@@ -18,8 +18,8 @@ import {WeatherService, WeatherResult} from '../services/weather.service';
           <li>Wind:     {{weather?.wind}} mph</li>
           <li>Precipitation: {{weather?.precip}}</li>
           <li>Clouds: {{weather?.clouds}} %</li>
-          <li>Min temp: {{weather?.temp_min}} F</li>
-          <li>Max temp: {{weather?.temp_max}} F</li>
+          <li>Min temp: {{weather?.min_temp}} F</li>
+          <li>Max temp: {{weather?.max_temp}} F</li>
         </ul>        
         <br/>
     <h3>Tomorrow: </h3>
@@ -29,8 +29,8 @@ import {WeatherService, WeatherResult} from '../services/weather.service';
         <li>Pressure: {{weather?.pressure1}} mbar</li>
         <li>Wind:     {{weather?.wind1}} mph</li>      
         <li>Clouds: {{weather?.clouds1}} %</li>
-        <li>Min temp: {{weather?.temp_min1}} F</li>
-        <li>Max temp: {{weather?.temp_max1}} F</li>
+        <li>Min temp: {{weather?.min_temp1}} F</li>
+        <li>Max temp: {{weather?.max_temp1}} F</li>
         <li>Preciptitation: {{weather?.precip1}} </li>
       </ul>
   `,

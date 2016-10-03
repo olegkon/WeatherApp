@@ -16,8 +16,8 @@ export interface WeatherResult {
   temperature: number; //string;
   humidity: number; //string;
   pressure: number; //string;
-  temp_min: number; //string;
-  temp_max:  number; //string;
+  min_temp: number; //string;
+  max_temp:  number; //string;
   wind:  number; //string;
   precip:  string;
   clouds: number;
@@ -25,8 +25,8 @@ export interface WeatherResult {
   temperature1: number;
   humidity1: number;
   pressure1: number;
-  temp_min1: number;
-  temp_max1: number;
+  min_temp1: number;
+  max_temp1: number;
   wind1:   number;
   clouds1: number;
   precip1: string;
@@ -112,8 +112,8 @@ export class WeatherService {
       temperature: data.list[0].main.temp,
       humidity: data.list[0].main.humidity,
       pressure: data.list[0].main.pressure,
-      temp_min: data.list[0].main.temp_min,
-      temp_max: data.list[0].main.temp_max,
+      min_temp: data.list[0].main.temp_min,
+      max_temp: data.list[0].main.temp_max,
       wind: data.list[0].wind.speed,
       precip: data.list[0].weather[0].main,
       clouds: data.list[0].clouds.all
@@ -121,8 +121,8 @@ export class WeatherService {
       , temperature1: data.list[1].main.temp,
       humidity1: data.list[1].main.humidity,
       pressure1: data.list[1].main.pressure,
-      temp_min1: data.list[1].main.temp_min,
-      temp_max1: data.list[1].main.temp_max,
+      min_temp1: data.list[1].main.temp_min,
+      max_temp1: data.list[1].main.temp_max,
       wind1: data.list[1].wind.speed,
       clouds1: data.list[1].clouds.all,
       precip1: data.list[1].weather[0].main

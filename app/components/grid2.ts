@@ -19,12 +19,10 @@ import {weatherRow} from "./weatherRow";
     	<h2>Grid2 Component</h2> 
     	
     	<input type="text" placeholder="Enter city" [formControl]="searchInput1"/>
-		    
-      	<h3>Current weather in {{weather?.place}} {{weather?.country}}:</h3>     	
-    	<!-- br/ -->        	    	
+		<br>     
+      	<h3>Current weather in {{weather?.place}} {{weather?.country}}:</h3>    	       	    	
     	<ul>
-    	    <li>Temperature: {{weather?.wdata[0].temperature}}F</li>
-            <!--li>Temperature: {{weather?.temperature}}F</li -->
+    	    <li>Temperature: {{weather?.wdata[0].temperature}}F</li>           
             <li>Humidity: {{weather?.wdata[0].humidity}}%</li>
         </ul>   	
     	<br/>
@@ -78,7 +76,7 @@ export class Grid2Component {
     private gridOptions:GridOptions;
     
     searchInput1: FormControl;
-    weather: WeatherResult;
+    weather: WeatherResult =  { temperature: 0, humidity: 0, pressure: 0, wind: 0, precip: "", clouds: 0, min_temp: 0, max_temp: 0, place:"", country:""};
 
     //myData:weatherRow; // = weather.wdata[0];
 
@@ -116,15 +114,15 @@ export class Grid2Component {
 
     private createRowData(weather) {
         return [
-            {"day":"09/30/2016", "temperature": 33, "humidity":99, "pressure":1000, "wind":15, "precipitation":33, "clouds":22, "min_temp":62, "max_temp":77},
-            {"day":"09/31/2016", "temperature":54, "humidity":95, "pressure":1005, "wind":16, "precipitation":37, "clouds":20, "min_temp":58, "max_temp":72}
+            { day: "Today", temperature: weather.temperature, humidity: weather.humidity, pressure: weather.pressure,
+                wind: weather.wind, precipitation: weather.precip, clouds: weather.clouds, min_temp: weather.temp_min, max_temp: weather.temp_max,
+                wdata: [ { day: "none", temperature: 0, humidity: 0, pressure: 0, wind: 0, precip: "", clouds: 0, temp_min: 0, temp_max: 0 }  ]
+            }
+
+ //           {day: "09/30/2016", temperature: 33, humidity: 99, pressure: 1000, wind: 15, precipitation: "clouds", clouds: 22, temp_min: 62, temp_max: 77},
+ //           {day: "09/31/2016", temperature: 54, humidity: 95, pressure: 1005, wind: 16, precipitation: "sunny", clouds: 20, temp_min: 58, temp_max: 72}
         ];
     }
-
-//{"day":"Today", "temperature":this.weather.temperature, "humidity":this.weather.humidity, "pressure":this.weather.pressure,
-//    "wind":this.weather.wind, "precipitation":this.weather.precip, "clouds":this.weather.clouds,
-//    "min_temp":this.weather.temp_min, "max_temp":this.weather.temp_max
-//}
 
 }
 
